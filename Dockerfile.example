@@ -1,24 +1,6 @@
 # Usar Node.js Alpine para menor tamanho
 FROM node:18-alpine
 
-# Build arguments do GitLab (ADICIONAR ESTAS LINHAS)
-ARG DB_HOST
-ARG DB_NAME
-ARG DB_USER
-ARG DB_PASS
-ARG JWT_SECRET
-ARG JWT_RESET_SECRET
-ARG NODE_ENV
-
-# Converter para variáveis de ambiente (ADICIONAR ESTAS LINHAS)
-ENV DB_HOST=${DB_HOST}
-ENV DB_NAME=${DB_NAME}
-ENV DB_USER=${DB_USER}
-ENV DB_PASS=${DB_PASS}
-ENV JWT_SECRET=${JWT_SECRET}
-ENV JWT_RESET_SECRET=${JWT_RESET_SECRET}
-ENV NODE_ENV=${NODE_ENV}
-
 # Criar usuário não-root para segurança
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S backend -u 1001
