@@ -10,6 +10,7 @@ const ADMIN_CONFIG = {
   role: 'admin'
 };
 
+
 // Configuração do template padrão
 const TEMPLATE_CONFIG = {
   name: 'Template Reset de Senha - Padrão',
