@@ -61,6 +61,18 @@ docker-compose logs -f oxypass-api
 
 # Verificar status
 docker-compose ps
+
+# Parar containers do docker-compose
+docker-compose down
+
+# Remover containers, networks, volumes e imagens
+docker-compose down --rmi all --volumes --remove-orphans
+
+# Depois de limpar, rebuild sem cache
+docker-compose build --no-cache
+
+docker-compose up -d
+
 ```
 
 ### 4. Exemplos de configuração de porta
@@ -97,6 +109,8 @@ docker-compose logs -f
 # Executar comandos dentro do container
 docker-compose exec oxypass-api npm run db:migrate
 docker-compose exec oxypass-api npm run db:seed
+
+
 ```
 
 ### Backup e restore do banco
